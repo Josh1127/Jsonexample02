@@ -13,6 +13,7 @@ import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
+    private val tag = MainActivity::class.java.simpleName
     var ubikes = ArrayList<Ubike>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
             Log.d("jsonObject", "${jsonObject.getString("sna")} ${jsonObject.getString("sbi")} ");
             val ubike= Ubike(jsonObject)
             ubikes.add(ubike)
+            Log.d(tag, ""+ubike.sna);
         }
     }
 
